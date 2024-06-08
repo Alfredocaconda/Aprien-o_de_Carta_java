@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="infracao2" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="179609a5-76ad-45db-8924-b38a967cf8f9">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="68"/>
+	<parameter name="codigo" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select * from vinfracao where idin=$P{codigo}]]>
+	</queryString>
+	<field name="idin" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="automobilista" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="endereco" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="n_carta" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="telefone_gmail" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="data_caducidade" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="agente" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nip" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="infracao" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="data_da_atuacao" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="disciplina_rodoviaria" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="local_de_atuacao" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="estado_de_pagamento" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="multa" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="data_do_pagamento" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="policia" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="120" splitType="Stretch">
+			<staticText>
+				<reportElement x="235" y="80" width="119" height="20" uuid="d539dbe1-6d40-4298-a644-4eb4b7b66770"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[República de Angola]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="235" y="100" width="119" height="20" uuid="1e00241d-6ff8-4361-b254-38106d54107b"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[Ministerio do Interior]]></text>
+			</staticText>
+			<image>
+				<reportElement x="274" y="31" width="38" height="38" uuid="26c3ef41-c3f8-41d9-8ebb-f8a32630d4ec"/>
+				<imageExpression><![CDATA["C:\\Aprienção_de_Carta\\relatorio\\2022-12-14-18-47-47--1267437692.jpeg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="56" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="10" width="173" height="20" uuid="bc372d0d-bf9d-4dfb-b056-2ef6695fb94e"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Unidade Policial de Benguela]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="415" y="10" width="132" height="20" uuid="a784e5f7-161c-4f5a-b560-fd39f4a4c2a4"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="26" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="25" width="555" height="1" uuid="ec420775-b7f3-4893-90c0-a56772ccb370"/>
+			</line>
+			<staticText>
+				<reportElement x="375" y="4" width="100" height="20" uuid="fcad1c11-f83e-4096-ab19-9867f2c8e35a"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Dados do Agente regulador]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="4" width="162" height="20" uuid="fea11698-76c4-4be0-a735-77b33a221e87"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Dados do Automobilista]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="270" splitType="Stretch">
+			<textField>
+				<reportElement x="136" y="4" width="100" height="20" uuid="47c43611-6a2e-47cd-87a7-2054a4dea6ce"/>
+				<textElement>
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{idin}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="4" width="100" height="20" uuid="a1411022-9ec1-4a82-a186-e6bc8d8cb79d"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Código]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="135" y="25" width="176" height="20" uuid="c6b3a228-42d9-47ba-b1b2-3ce8310e2ffa"/>
+				<textElement>
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{automobilista}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="24" width="135" height="20" uuid="d1ccb40a-150a-4418-8167-e5aa2659d1fd"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nome do Automobilista]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="136" y="46" width="176" height="20" uuid="347a7c72-2b70-470f-af1d-a362c761ff7d"/>
+				<textElement>
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{endereco}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="44" width="100" height="20" uuid="3c85d6de-dc3d-4c06-9627-cc276f8b41e7"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Endereço]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="136" y="66" width="176" height="20" uuid="d640bb45-38b3-454a-8548-ffe175aec85e"/>
+				<textElement>
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{n_carta}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="64" width="100" height="20" uuid="d8e25dc1-db1d-4fd2-bb80-a1d7a6c1b7e1"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Número da Carta]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="136" y="86" width="176" height="20" uuid="903d5e7b-29ce-4d79-80ce-4ea0ebbd2099"/>
+				<textElement>
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{telefone_gmail}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="84" width="100" height="20" uuid="d7927341-8098-4f2b-b16d-6f33eb236871"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Telefone/Email]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="136" y="106" width="176" height="20" uuid="0a9ca430-6ce2-40a4-a2c8-c9bc5b735893"/>
+				<textElement>
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{data_caducidade}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="104" width="100" height="20" uuid="7c38ca82-26d2-4e8e-a328-af4eed16335f"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Data de Caducidade]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="411" y="3" width="144" height="20" uuid="f3111fc6-64c8-4e51-8a6c-6897274283cb"/>
+				<textElement>
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{agente}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="311" y="4" width="100" height="20" uuid="b7331afe-13ee-488a-b4a7-35b2961e9cb9"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nome do Agente]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="413" y="24" width="132" height="20" uuid="aaa55591-bc20-44bc-b9a0-08553fe811a1"/>
+				<textElement>
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nip}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="372" y="24" width="30" height="20" uuid="a5cac7e4-684b-4b00-bb70-db16dfb58d1c"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nip]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="148" width="555" height="1" uuid="76dbca5a-7812-47e9-a967-999d9c2d4091"/>
+			</line>
+			<line>
+				<reportElement x="0" y="126" width="556" height="1" uuid="ae5a3997-95ed-462e-9e79-9d68206ec363"/>
+			</line>
+			<staticText>
+				<reportElement x="253" y="126" width="100" height="20" uuid="a1a60ca2-ff63-4d17-b6cd-f4f6d1ccba75"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Infração]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="135" y="149" width="410" height="20" uuid="14df606d-3f90-4366-ae45-220ec5b134f6"/>
+				<textElement>
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{infracao}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="2" y="149" width="100" height="20" uuid="f473fe7b-2f3f-49f0-97fa-f400eb5e3064"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Infração]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="135" y="250" width="218" height="20" uuid="ef7d41f7-8581-4213-9ae2-31ccdb3b58d1"/>
+				<textElement>
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{data_da_atuacao}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="2" y="250" width="100" height="20" uuid="971389da-fab8-4233-8ec2-e706cccd7d0a"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Data de Atuação]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="135" y="169" width="410" height="20" uuid="bd91b389-533f-4926-9bcf-d873d118ee67"/>
+				<textElement>
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{disciplina_rodoviaria}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="2" y="170" width="132" height="20" uuid="d66b7d62-8063-44c9-afae-fb3d1acb8792"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Disciplina Rodoviaria]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="135" y="190" width="218" height="20" uuid="c12d86ca-e035-4759-a25d-8311dac45c7d"/>
+				<textElement>
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{local_de_atuacao}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="3" y="190" width="111" height="20" uuid="d3922a01-577c-43e5-8062-1afda18aad23"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Local de Atuação]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="136" y="210" width="217" height="20" uuid="4716e52f-fa30-4e99-b872-9b9297574e07"/>
+				<textElement>
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{estado_de_pagamento}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="3" y="210" width="129" height="20" uuid="e7677f88-565f-4635-93a1-9586ea9ff3d7"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Estado de Pagamento]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="135" y="230" width="218" height="20" uuid="a3fbd334-f790-4037-a14e-e610c9dc62bc"/>
+				<textElement>
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{multa}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="4" y="230" width="100" height="20" uuid="767dc5f0-5329-429f-b708-56a6d947c48a"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Multa]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="53" splitType="Stretch">
+			<staticText>
+				<reportElement x="423" y="3" width="100" height="20" uuid="63711305-daff-4048-83dc-72441f740b21"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Comandante]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="14" y="3" width="133" height="20" uuid="5762fd19-c954-49e4-ab52-f2d27906dc5a"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Assinatura do Agente]]></text>
+			</staticText>
+			<line>
+				<reportElement x="10" y="29" width="137" height="1" uuid="9f2f790e-d22d-4cdb-80e0-f665fcdb4c74"/>
+			</line>
+			<line>
+				<reportElement x="396" y="28" width="151" height="1" uuid="e7db21f6-8c90-42ce-a1d4-000270496c78"/>
+			</line>
+			<textField>
+				<reportElement x="32" y="33" width="100" height="20" uuid="53aeaeac-d97f-4d65-9473-8448e4997861"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{policia}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
